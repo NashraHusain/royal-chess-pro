@@ -7,29 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="header">
         <h1>Royal Chess</h1>
-        <div id="status">White's Turn</div>
+        <div id="status" class="white-turn-active">WHITE'S TURN</div>
     </div>
 
-    <div id="game-container">
-        <div id="board">
-            <div id="promotion-overlay" class="overlay">
-                <p>Promote Your Pawn</p>
-                <div class="promo-options" id="promo-options"></div>
+    <div class="main-layout">
+        <div class="side-panel">
+            <h3>Captured by White</h3>
+            <div class="graveyard white-kill" id="captured-black"></div>
+        </div>
+
+        <div id="game-container">
+            <div id="board">
+                <div id="promotion-overlay" class="overlay">
+                    <p>Promote Your Pawn</p>
+                    <div class="promo-options" id="promo-options"></div>
+                </div>
+                <div id="win-overlay" class="overlay">
+                    <h2 id="winner-text">White Wins!</h2>
+                    <button onclick="location.reload()">Play Again</button>
+                </div>
             </div>
-            <div id="win-overlay" class="overlay">
-                <h2 id="winner-text">White Wins!</h2>
-                <button onclick="location.reload()">Play Again</button>
-            </div>
+        </div>
+
+        <div class="side-panel">
+            <h3>Captured by Black</h3>
+            <div class="graveyard black-kill" id="captured-white"></div>
         </div>
     </div>
 
     <div class="controls">
+        <button id="undo-btn" onclick="undoMove()">↩ Undo Move</button>
         <button id="reset-btn" onclick="initGame()">Restart Game</button>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

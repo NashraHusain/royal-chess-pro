@@ -2,7 +2,7 @@
 
 A high-fidelity, web-based Chess engine featuring professional rules, sleek "Gold & Charcoal" visuals, and full mobile responsiveness. Built with pure HTML5, CSS3, and JavaScript.
 
-[![Royal Chess Preview](https://img.shields.io/badge/Status-Playable-success?style=for-the-badge&logo=github)](https://NashraHusain.github.io/royal-chess-pro/)
+[![Royal Chess Preview](https://img.shields.io/badge/Status-Playable-success?style=for-the-badge&logo=github)](https://nashrahusain.github.io/royal-chess-pro/)
 [![Chess Rules](https://img.shields.io/badge/Rules-Standard%20FIDE-gold?style=for-the-badge)](https://www.chess.com/learn-how-to-play-chess)
 
 ## 🌟 Key Features

@@ -79,6 +79,7 @@ body {
 /* TURN INDICATORS */
 #status {
     font-size: 20px;
+    text-align: center;
     padding: 10px 25px;
     border-radius: 30px;
     border: 2px solid var(--gold);
@@ -152,7 +153,6 @@ button:hover { background: var(--gold); color: #000; }
 
     #status {
         font-size: 16px;
-        width: 80%;
     }
 }
 
@@ -216,7 +216,6 @@ button:hover { background: var(--gold); color: #000; }
     }
 
     #status {
-        width: 80%;
         font-size: 16px;
         margin-bottom: 10px;
     }
@@ -241,3 +240,4 @@ button:hover { background: var(--gold); color: #000; }
         width: 25px;
     }
 }
+

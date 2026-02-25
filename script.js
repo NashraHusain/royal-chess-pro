@@ -262,6 +262,4 @@ window.addEventListener('load', () => {
     );
 });
 
-
 initGame();
-

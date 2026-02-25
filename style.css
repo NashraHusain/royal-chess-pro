@@ -3,6 +3,7 @@
     --dark-bg: #0f172a;
     --light-sq: #f0d9b5;
     --dark-sq: #b58863;
+    --danger: #ff0000;
 }
 
 body {
@@ -17,21 +18,48 @@ body {
     margin: 0;
 }
 
-#status {
-    padding: 10px 30px;
-    border: 2px solid var(--gold);
-    border-radius: 50px;
-    margin: 20px 0;
-    font-weight: bold;
-    background: rgba(255, 255, 255, 0.05);
+.main-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 10px;
 }
+
+.side-panel { display: flex; flex-direction: column; align-items: center; }
+.side-panel h3 { font-size: 12px; margin-bottom: 10px; text-transform: uppercase; }
+
+.graveyard {
+    width: auto;             /* Grows wider when a 2nd column starts */
+    min-width: 50px;
+    max-width: 120px;        /* Limits to about 2-3 columns max */
+    height: 440px;           /* Matches the height of your board */
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;  /* Stack pieces vertically */
+    flex-wrap: wrap;         /* This starts the 2nd line when height is reached */
+    align-content: flex-start; 
+    padding: 10px;
+    gap: 2px;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;        /* Keeps it clean */
+}
+
+.graveyard span {
+    font-size: 32px;
+    width: 40px;             /* Fixed width for each piece column */
+    text-align: center;
+    cursor: default;
+}
+
+.white-kill { border-color: #fff; }
+.black-kill { border-color: #000; }
 
 #board {
     display: grid;
     grid-template-columns: repeat(8, 60px);
     grid-template-rows: repeat(8, 60px);
-    border: 10px solid #2d2d2d;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    border: 8px solid #2d2d2d;
     position: relative;
 }
 
@@ -48,44 +76,40 @@ body {
 .light { background-color: var(--light-sq); }
 .dark { background-color: var(--dark-sq); }
 
-/* VISIBILITY FIX: Shadow/Outline for white pieces */
-.piece-white {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -1px -1px 0 #000;
-}
-
-.piece-black {
-    color: #000000;
-}
-
-.selected { background-color: var(--gold) !important; }
-
-.overlay {
-    display: none;
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-}
-
-.promo-choice {
-    font-size: 50px;
-    cursor: pointer;
-    padding: 10px;
-    transition: 0.2s;
-}
-
-.promo-choice:hover { transform: scale(1.2); color: #fff; }
-
-button {
+/* TURN INDICATORS */
+#status {
+    font-size: 20px;
     padding: 10px 25px;
-    background: transparent;
-    color: var(--gold);
+    border-radius: 30px;
     border: 2px solid var(--gold);
-    border-radius: 5px;
-    cursor: pointer;
+    transition: 0.4s;
     font-weight: bold;
 }
+
+.white-turn-active { background: #fff !important; color: #000 !important; box-shadow: 0 0 15px #fff; }
+.black-turn-active { background: #000 !important; color: var(--gold) !important; box-shadow: 0 0 15px var(--gold); }
+
+/* KING IN CHECK RED ALERT */
+.check {
+    background-color: var(--danger) !important;
+    animation: urgentPulse 0.8s infinite !important;
+    border: 2px solid white !important;
+}
+
+@keyframes urgentPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); background-color: #b30000; }
+    100% { transform: scale(1); }
+}
+
+.piece-white { color: #fff; text-shadow: 2px 2px 4px #000, -1px -1px 0 #000; }
+.piece-black { color: #000; }
+.selected { background-color: var(--gold) !important; }
+
+.controls { margin-top: 25px; display: flex; gap: 15px; }
+button { padding: 10px 20px; background: transparent; color: var(--gold); border: 2px solid var(--gold); cursor: pointer; border-radius: 5px; font-weight: bold; }
+button:hover { background: var(--gold); color: #000; }
+
+.overlay { display: none; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; flex-direction: column; align-items: center; justify-content: center; }
+.promo-choice { font-size: 45px; cursor: pointer; transition: 0.2s; }
+.promo-choice:hover { transform: scale(1.2); }

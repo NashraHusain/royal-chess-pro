@@ -1,53 +1,62 @@
 # 👑 Royal Chess: Grandmaster Edition
 
-A high-fidelity, web-based Chess engine featuring professional rules, sleek "Gold & Charcoal" visuals, and full mobile responsiveness. Built with pure HTML5, CSS3, and JavaScript.
+A high-fidelity, web-based Chess engine featuring professional rules, sleek "Gold & Charcoal" visuals, and advanced interactive logic. Built with pure HTML5, CSS3, and JavaScript (ES6+).
 
 [![Royal Chess Preview](https://img.shields.io/badge/Status-Playable-success?style=for-the-badge&logo=github)](https://nashrahusain.github.io/royal-chess-pro/)
 [![Chess Rules](https://img.shields.io/badge/Rules-Standard%20FIDE-gold?style=for-the-badge)](https://www.chess.com/learn-how-to-play-chess)
 
 ## 🌟 Key Features
 
-* **Advanced Rule Enforcement**: Includes logic for complex moves often missing in web games:
-    * **Castling**: Supports both King-side and Queen-side castling.
-    * **En Passant**: Fully functional special pawn capture.
-    * **Pawn Promotion**: Choose between Queen, Rook, Bishop, or Knight when a pawn reaches the final rank.
-* **Visual Enhancements**:
-    * **High Visibility Mode**: White pieces feature a custom text-shadow/outline to ensure clarity on all square colors.
-    * **Glassmorphism UI**: Modern status bars and overlay menus.
-* **Responsive Design**: Play on Desktop, Tablet, or Mobile with a board that scales to fit your screen.
-* **Win Detection**: Automatic detection of King capture with a custom victory screen.
+* **Advanced Rule Enforcement**: Includes logic for complex moves:
+    * **Castling**: Supports both King-side and Queen-side (Long) castling.
+    * **En Passant**: Fully functional special pawn capture system.
+    * **Pawn Promotion**: Interactive UI to choose between Queen, Rook, Bishop, or Knight.
+* **Visual Immersion**:
+    * **Check-Alert Animations**: The King's square pulses with a red "Emergency Glow" when under attack.
+    * **Dynamic Turn Indicator**: A glassmorphism status bar that glows White or Gold depending on the active player.
+* **Adaptive Multi-Column Graveyard**: Captured pieces are organised in vertical columns that automatically "wrap" into a second line if the graveyard reaches capacity, keeping the UI compact.
+* **Game Management**: Integrated **Undo Move** history and instant **Restart** functionality.
 
 ## 🕹️ How to Play
 
-1.  **Select a Piece**: Click on any piece of your color. The piece will be highlighted in gold.
-2.  **Move**: Click on a valid square. The engine will block any illegal moves.
+1.  **Select a Piece**: Click on any piece of your color. It will be highlighted in gold.
+2.  **Move**: Click on a valid square. The engine automatically validates moves based on FIDE rules.
 3.  **Special Moves**:
     * To **Castle**, move your King two squares toward your Rook.
-    * To **Promote**, move your pawn to the opposite end of the board and select your new piece from the pop-up menu.
-
-
+    * To **Promote**, move your pawn to the last rank and select your new piece from the overlay.
+4.  **Winning**: The game ends immediately when a King is captured.
 
 ## 🛠️ Technical Logic
 
-The game is built using a coordinate-based grid system (0-7 for rows and columns). 
-* **Path Validation**: A custom `isPathClear()` function prevents non-jumping pieces (like Rooks and Queens) from moving through other pieces.
-* **Move History**: The engine tracks the `lastMove` specifically to handle the "one-turn window" required for En Passant captures.
-* **Event-Driven UI**: The board re-renders only when state changes occur, ensuring smooth performance.
+* **Coordinate Grid System**: The board operates on a 0-7 array-based grid.
+* **Win-Priority Execution**: The engine prioritises "King Capture" checks before "Pawn Promotion" to prevent runtime errors during winning strikes.
+* **Flex-Wrap Graveyard**: Uses CSS Flexbox `column-wrap` logic combined with JavaScript `createElement` cycles to manage fallen pieces without resizing the board layout.
+* **Path Validation**: A custom `isPathClear()` function prevents non-jumping pieces (Rooks/Queens/Bishops) from moving through obstacles.
 
 ## 🚀 Installation & Deployment
 
-No installation is required. This is a client-side application.
-
-1.  Clone this repository:
+1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/NashraHusain/royal-chess-pro.git
+    git clone [https://github.com/NashraHusain/royal-chess-pro.git](https://github.com/NashraHusain/royal-chess-pro.git)
     ```
-2.  Open `index.html` in any modern web browser.
-3.  Alternatively, visit the live link hosted via **GitHub Pages**.
+2.  **Run the game**:
+    Open `index.html` in any modern web browser (Chrome, Edge, or Firefox).
+3.  **Live Access**:
+    Host this via GitHub Pages to play anywhere on mobile or desktop.
 
-## 📜 License
+## 📜 License & Copyright 
 
-This project is open-source. Feel free to fork it, add new features (like an AI or move history log), and use it for your own portfolio!
+**© 2026 Nashra Husain. All Rights Reserved.**
+
+This project is the intellectual property of Nashra Husain. While the source code is visible for educational and peer-review purposes, the following restrictions apply:
+
+* **No Portfolio Use**: You are **strictly prohibited** from including this project, its code, or its design in your own professional portfolio or claiming it as your own work.
+* **Non-Commercial Use**: This project may not be used for any commercial purposes or redistributed on any platform for profit.
+* **No Unauthorised Redistribution**: You may not re-upload this code to your own public repositories without clear and prominent attribution to the original author and express written permission.
+
+**Permitted Use:**
+* You are welcome to study the code for learning and educational purposes.
+* You may fork the repository for personal, private experimentation only.
 
 ---
-Made with ✨ and Logic.
+**Made with ✨ and Logic by [Nashra Husain](https://github.com/NashraHusain)**

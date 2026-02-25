@@ -2,8 +2,8 @@
 
 A high-fidelity, web-based Chess engine featuring professional rules, sleek "Gold & Charcoal" visuals, and full mobile responsiveness. Built with pure HTML5, CSS3, and JavaScript.
 
-![Royal Chess Preview](https://img.shields.io/badge/Status-Playable-success?style=for-the-badge&logo=github)
-![Chess Rules](https://img.shields.io/badge/Rules-Standard%20FIDE-gold?style=for-the-badge)
+[![Royal Chess Preview](https://img.shields.io/badge/Status-Playable-success?style=for-the-badge&logo=github)](https://NashraHusain.github.io/royal-chess-pro/)
+[![Chess Rules](https://img.shields.io/badge/Rules-Standard%20FIDE-gold?style=for-the-badge)](https://www.chess.com/learn-how-to-play-chess)
 
 ## 🌟 Key Features
 
@@ -40,7 +40,7 @@ No installation is required. This is a client-side application.
 
 1.  Clone this repository:
     ```bash
-    git clone [https://github.com/NashraHusain/royal-chess-pro.git](https://github.com/NashraHusain/royal-chess-pro.git)
+    git clone https://github.com/NashraHusain/royal-chess-pro.git
     ```
 2.  Open `index.html` in any modern web browser.
 3.  Alternatively, visit the live link hosted via **GitHub Pages**.

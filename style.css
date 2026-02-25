@@ -32,7 +32,7 @@ body {
     width: auto;             /* Grows wider when a 2nd column starts */
     min-width: 50px;
     max-width: 120px;        /* Limits to about 2-3 columns max */
-    height: 440px;           /* Matches the height the board */
+    height: 440px;           /* Matches the height of the board */
     border: 2px solid var(--gold);
     border-radius: 8px;
     display: flex;
@@ -153,7 +153,6 @@ button:hover { background: var(--gold); color: #000; }
 
     #status {
         font-size: 16px;
-        text-align: center;
     }
 }
 
@@ -189,7 +188,7 @@ button:hover { background: var(--gold); color: #000; }
     .graveyard {
         width: 100%;
         max-width: none;
-        height: auto; 
+        height: auto; /* Remove fixed height for mobile */
         min-height: 50px;
         flex-direction: row; /* Pieces stack left-to-right */
         justify-content: center;
@@ -198,7 +197,7 @@ button:hover { background: var(--gold); color: #000; }
     }
 
     .graveyard span {
-        font-size: 26px; 
+        font-size: 26px; /* Optimized for touch */
         width: 32px;
     }
 
@@ -218,7 +217,6 @@ button:hover { background: var(--gold); color: #000; }
 
     #status {
         font-size: 16px;
-        text-align: center;
         margin-bottom: 10px;
     }
 
@@ -235,12 +233,10 @@ button:hover { background: var(--gold); color: #000; }
     }
 }
 
-/* Extra tweak for very thin phones (iPhone SE, etc.) */
+/* Extra tweak for very thin phones */
 @media (max-width: 360px) {
     .graveyard span {
         font-size: 20px;
         width: 25px;
     }
 }
-
-

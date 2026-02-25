@@ -250,4 +250,18 @@ function findKing(color) {
     return {r: -1, c: -1};
 }
 
+// Security Branding
+window.addEventListener('load', () => {
+    console.log(
+        "%c👑 Royal Chess: Grandmaster Edition", 
+        "color: #FFD700; font-size: 24px; font-weight: bold; text-shadow: 2px 2px #000;"
+    );
+    console.log(
+        "%cDeveloped by Nashra Husain. Unauthorized portfolio use is prohibited.", 
+        "color: #fff; background: #8B0000; padding: 5px; border-radius: 3px;"
+    );
+});
+
+
 initGame();
+
